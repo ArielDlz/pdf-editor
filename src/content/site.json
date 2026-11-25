@@ -1,0 +1,40 @@
+{
+  "name": "NextPDF",
+  "title": "NextPDF — Free browser PDF editor",
+  "description": "Edit PDFs in your browser. Replace text, highlight, draw, sign, and download. The file stays on your device and is never uploaded.",
+  "tagline": "PDF editor",
+  "headline": "Edit PDFs in your browser",
+  "lead": "Drop a file here, or browse from this computer.",
+  "featuresHeading": "What you can do",
+  "features": [
+    {
+      "title": "Replace text",
+      "body": "Drag across words or lines and type the replacement. This works when the page already has a text layer. A scanned page does not."
+    },
+    {
+      "title": "Highlight, draw, and images",
+      "body": "Mark a passage, sketch on the page, or place a PNG or JPEG."
+    },
+    {
+      "title": "Sign and cut",
+      "body": "Draw a signature and place it on the page, or cut a rectangular or circular region out of the page."
+    },
+    {
+      "title": "Pages",
+      "body": "Rotate or delete pages, move through the document, and zoom in on a detail."
+    },
+    {
+      "title": "Private by default",
+      "body": "The file stays in this browser tab. Nothing is uploaded to a server."
+    },
+    {
+      "title": "Download",
+      "body": "Undo and redo as you work, then download the edited PDF. New text uses Helvetica, Times, or Courier."
+    }
+  ],
+  "limits": [
+    "The file stays in this browser. Nothing is uploaded.",
+    "Drag across a few words or several lines to replace them. A scanned page has no text layer.",
+    "Very large PDFs can run out of memory in the tab."
+  ]
+}

@@ -2,7 +2,8 @@ import fs from 'node:fs'
 import { createRequire } from 'node:module'
 import path from 'node:path'
 import react from '@vitejs/plugin-react'
-import { defineConfig, type Plugin } from 'vite'
+import { defineConfig, loadEnv, type Plugin } from 'vite'
+import { normalizeSiteUrl, seoPlugin } from './seo-plugin.ts'
 
 const require = createRequire(import.meta.url)
 const pdfjsRoot = path.dirname(require.resolve('pdfjs-dist/package.json'))
@@ -59,6 +60,10 @@ function pdfjsAssets(): Plugin {
   }
 }
 
-export default defineConfig({
-  plugins: [react(), pdfjsAssets()],
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '')
+  const siteUrl = normalizeSiteUrl(env.VITE_SITE_URL)
+  return {
+    plugins: [react(), pdfjsAssets(), seoPlugin(siteUrl)],
+  }
 })

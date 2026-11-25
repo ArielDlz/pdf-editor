@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import site from '../content/site.json' with { type: 'json' }
 import { useEditorStore } from '../store/editorStore'
 import { Logo } from './Logo'
 
@@ -14,7 +15,7 @@ export function DropZone() {
   }
 
   return (
-    <div className="drop-screen">
+    <main className="drop-screen">
       <div
         className={over ? 'drop-card over' : 'drop-card'}
         onDragOver={(event) => {
@@ -29,9 +30,9 @@ export function DropZone() {
         }}
       >
         <Logo />
-        <p className="eyebrow">PDF editor</p>
-        <h1>Open a PDF</h1>
-        <p className="lead">Drop a file here, or browse from this computer.</p>
+        <p className="eyebrow">{site.tagline}</p>
+        <h1>{site.headline}</h1>
+        <p className="lead">{site.lead}</p>
         <button type="button" onClick={() => inputRef.current?.click()} disabled={opening}>
           {opening ? 'Opening…' : 'Browse'}
         </button>
@@ -47,11 +48,22 @@ export function DropZone() {
         />
         {error ? <p className="error">{error}</p> : null}
         <ul className="limits">
-          <li>The file stays in this browser. Nothing is uploaded.</li>
-          <li>Drag across a few words or several lines to replace them. A scanned page has no text layer.</li>
-          <li>Very large PDFs can run out of memory in the tab.</li>
+          {site.limits.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
         </ul>
       </div>
-    </div>
+      <section className="about" aria-labelledby="capabilities">
+        <h2 id="capabilities">{site.featuresHeading}</h2>
+        <ul className="features">
+          {site.features.map((feature) => (
+            <li key={feature.title}>
+              <h3>{feature.title}</h3>
+              <p>{feature.body}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </main>
   )
 }
