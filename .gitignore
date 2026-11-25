@@ -1,0 +1,66 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist
+dist-ssr
+*.local
+*.tsbuildinfo
+.vite/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Local security notes. These describe unfixed issues and must stay off the remote.
+SECURITY_REVIEW.md
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+id_rsa
+id_ed25519
+credentials.json
+secrets.json
+*.secret
+
+# Documents opened or exported while testing the editor.
+# Fixtures kept under public/ or src/ can still be committed.
+*.pdf
+!public/**/*.pdf
+!src/**/*.pdf
+
+# Test and coverage output
+coverage/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS junk
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
